@@ -1,3 +1,6 @@
+#ifndef BOOK_H
+#define BOOK_H
+
 #include "product.h"
 #include "util.h"
 #include <set>
@@ -7,7 +10,6 @@
 #include <sstream>
 #include <fstream>
 
-using namespace std;
 
 class Book : public Product {
 public:

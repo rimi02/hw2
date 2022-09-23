@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
      * Declare your derived DataStore object here replacing
      *  DataStore type to your derived type
      ****************/
-    DataStore ds;
+    MyDataStore ds;
 
 
 
@@ -100,6 +100,31 @@ int main(int argc, char* argv[])
                 done = true;
             }
 	    /* Add support for other commands here */
+        else if (cmd == "ADD") {
+            string username;
+            int hit;
+            if (ss >> username >> hit) {
+                if (hit < 0 || hit >= hits.size()) {
+                    cout << "Invalid hit number" << endl;
+                }
+                else {
+                    ds.addCart(username, hits[hit]);
+                }
+            }
+        }
+        else if (cmd == "VIEWCART") {
+            string username;
+            if (ss >> username) {
+                ds.viewCart(username);
+            }
+        }
+
+        else if (cmd == "BUYCART") {
+            string username;
+            if (ss >> username) {
+                ds.buyCart(username);
+            }
+        }
 
 
 

@@ -1,3 +1,6 @@
+#ifndef MOVIE_H
+#define MOVIE_H
+
 #include "product.h"
 #include "util.h"
 #include <set>
@@ -7,7 +10,6 @@
 #include <sstream>
 #include <fstream>
 
-using namespace std;
 class Movie : public Product {
 public:
     Movie(const string category, const string name, double price, int qty, string genre, string rating);
